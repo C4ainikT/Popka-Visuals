@@ -72,7 +72,6 @@ function uilib.createSetting(offset, size, isOpened)
         s = size
     else
         s = UDim2.new(0, 400, 0, 500)
-    end
 
     local frame = uilib.createFrame(
         popkavisualGui,
@@ -84,5 +83,6 @@ function uilib.createSetting(offset, size, isOpened)
         3
     )
     return frame
+end
 			
 return uilib
