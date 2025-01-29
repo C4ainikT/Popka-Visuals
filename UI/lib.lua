@@ -13,7 +13,7 @@ function uilib.createFrame(parent, name, pos, size, color, zIndex)
 	cornerFrame.Parent = Frame
 end
 
-function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition, offColor, toggleColor, Function, Setting)
+function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition, toggleColor, offColor, Function, Setting)
 
 	local tween = game:GetService("TweenService")
 
@@ -32,13 +32,12 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
     button.Text = buttonText
 
     local isOn = false
-	local isOpenedSetting = false
 
     local function updateButtonState()
         if isOn then
-            tween:Create(button, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {TextColor3 = toggleColor or Color3.fromRGB(122, 122, 122)}):Play()
+            tween:Create(button, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {TextColor3 = offColor or Color3.fromRGB(255, 255, 255)}):Play()
         else
-            tween:Create(button, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {TextColor3 = offColor or Color3.fromRGB(255, 255, 255)}):Play()
+            tween:Create(button, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {TextColor3 =  or Color3.fromRGB(255, 255, 0)}):Play()
         end
     end
 
@@ -52,11 +51,7 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
     end)
 
 	button.MouseButton2Click:Connect(function()
-        isOpenedSetting = not isOpenedSetting
-		if Setting then
-			Setting(isOpenedSetting)
-		end
-		
+		Setting()
     end)
 
 	updateButtonState()
@@ -64,6 +59,7 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
 	return button
 end
 
+			
 function uilib.createSetting(offset, size, isOpened)
     if VisualBBGui:FindFirstChild("settingTopBar") then VisualBBGui:FindFirstChild("settingTopBar"):Destroy() end
 
