@@ -13,7 +13,7 @@ function uilib.createFrame(parent, name, pos, size, color, zIndex)
 	cornerFrame.Parent = Frame
 end
 
-function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition, toggleColor, offColor, Function, Setting)
+function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition, offColor, toggleColor, Function, Setting)
 
 	local tween = game:GetService("TweenService")
 
