@@ -64,12 +64,11 @@ function uilib.createSetting(offset, size, isOpened)
     if VisualBBGui:FindFirstChild("settingTopBar") then VisualBBGui:FindFirstChild("settingTopBar"):Destroy() end
 
     local s
-
-if size then
+    if size then
         s = size
     else
         s = UDim2.new(0, 400, 0, 500)
-				end
+	end
 
     local frame = uilib.createFrame(
         popkavisualGui,
