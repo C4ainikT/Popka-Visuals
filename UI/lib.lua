@@ -13,7 +13,7 @@ function uilib.createFrame(parent, name, pos, size, color, zIndex)
 	cornerFrame.Parent = Frame
 end
 
-function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition, onToggleFunction, LKM, toggleColor, offColor)
+function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition, toggleColor, offColor, Function, Setting)
     local button = Instance.new("TextButton")
     button.Parent = parent
     button.Size = buttonSize
@@ -29,6 +29,7 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
     button.Text = buttonText
 
     local isOn = false
+	local isOpenedSetting = false
 
     local function updateButtonState()
         if isOn then
@@ -38,21 +39,26 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
         end
     end
 
-    updateButtonState()
-
-    button.MouseButton1Click:Connect(function()
+	button.MouseButton1Click:Connect(function()
         isOn = not isOn
         updateButtonState()
-        if onToggleFunction then
-            onToggleFunction(isOn)
-        end
+		if Function then
+			Function(isOn)
+		end
+		
     end)
-    
-    button.MouseButton2Click:Connect(function()
-        LKM()
+
+	button.MouseButton2Click:Connect(function()
+        isOpenedSetting = not isOpenedSetting
+		if Setting then
+			Setting(isOpenedSetting)
+		end
+		
     end)
-    
-    return button
+
+	updateButtonState()
+
+	return button
 end
 
 return uilib
