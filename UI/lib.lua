@@ -82,4 +82,6 @@ function uilib.createSetting(parent, offset, size, isOpened)
     return frame
 end
 
+print(1)
+			
 return uilib
