@@ -1,5 +1,17 @@
 local uilib = {}
 
+function uilib.createFrame(parent, name, pos, size, color)
+
+	local Frame = Instance.new("Frame")
+	Frame.Parent = parent
+	Frame.Name = name
+	Frame.Position = pos
+	Frame.Size = size
+	Frame.BackgroundColor3 = color
+	local cornerFrame = Instance.new("UICorner")
+	cornerFrame.Parent = Frame
+end
+
 function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition, onToggleFunction, LKM, toggleColor, offColor)
     local button = Instance.new("TextButton")
     button.Parent = parent
