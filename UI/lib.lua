@@ -36,7 +36,7 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
 
     local function updateButtonState()
         if isOn then
-            tween:Create(button, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {TextColor3 = toggleColor or Color3.fromRGB(255, 255, 0)}):Play()
+            tween:Create(button, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {TextColor3 = toggleColor or Color3.fromRGB(122, 122, 122)}):Play()
         else
             tween:Create(button, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {TextColor3 = offColor or Color3.fromRGB(255, 255, 255)}):Play()
         end
