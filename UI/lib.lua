@@ -64,4 +64,27 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
 	return button
 end
 
+function uilib.createSetting(name, offset, size, isOpened)
+
+	local s
+
+	if size then
+		s = size
+	else
+		s = UDim2.new(0, 400, 0, 500),
+	end
+
+	local frame = ui.createFrame(
+		popkavisualGui,
+		"MyFrame",
+		UDim2.new(0.5, 250, 0, 200),
+		UDim2.new(0, 400, 0, 500),
+		Color3.fromRGB(0, 0, 0),
+		Color3.fromRGB(255, 255, 255),
+		3
+	)
+)
+
+end
+			
 return uilib
