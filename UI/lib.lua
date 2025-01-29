@@ -60,8 +60,12 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
 end
 
 			
-function uilib.createSetting(parent, offset, size)
+function uilib.createSetting(parent, offset, size, id)
     if parent:FindFirstChild("Settings") then parent:FindFirstChild("Settings"):Destroy() end
+
+	local idn 
+	if idn == id then parent:FindFirstChild("Settings"):Destroy() end
+	idn = id
 
     local s
     if size then
@@ -82,6 +86,6 @@ function uilib.createSetting(parent, offset, size)
     return frame
 end
 
-print(2)
+print(2.1)
 			
 return uilib
