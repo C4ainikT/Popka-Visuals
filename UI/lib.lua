@@ -1,6 +1,6 @@
 local uilib = {}
 
-function uilib.createFrame(parent, name, pos, size, color)
+function uilib.createFrame(parent, name, pos, size, color, zIndex)
 
 	local Frame = Instance.new("Frame")
 	Frame.Parent = parent
@@ -8,6 +8,7 @@ function uilib.createFrame(parent, name, pos, size, color)
 	Frame.Position = pos
 	Frame.Size = size
 	Frame.BackgroundColor3 = color
+	Frame.ZIndex = zIndex or 1
 	local cornerFrame = Instance.new("UICorner")
 	cornerFrame.Parent = Frame
 end
