@@ -60,7 +60,7 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
 end
 
 			
-function uilib.createSetting(parent, offset, size, isOpened)
+function uilib.createSetting(parent, offset, size)
     if parent:FindFirstChild("Settings") then parent:FindFirstChild("Settings"):Destroy() end
 
     local s
