@@ -65,27 +65,25 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
 end
 
 function uilib.createSetting(offset, size, isOpened)
+    if VisualBBGui:FindFirstChild("settingTopBar") then VisualBBGui:FindFirstChild("settingTopBar"):Destroy() end
 
-	if VisualBBGui:FindFirstChild("settingTopBar") then VisualBBGui:FindFirstChild("settingTopBar"):Destroy() end
-				
-	local s
+    local s
+    if size then
+        s = size
+    else
+        s = UDim2.new(0, 400, 0, 500)
+    end
 
-	if size then
-		s = size
-	else
-		s = UDim2.new(0, 400, 0, 500),
-	end
-
-	local frame = ui.createFrame(
-		popkavisualGui,
-		"Settings",
-		UDim2.new(0.5, 250, 0, 200),
-		UDim2.new(0, 400, 0, 500),
-		Color3.fromRGB(0, 0, 0),
-		Color3.fromRGB(255, 255, 255),
-		3
-	)
-)
+    local frame = uilib.createFrame(
+        popkavisualGui,
+        "Settings",
+        UDim2.new(0.5, 250, 0, 200),
+        UDim2.new(0, 400, 0, 500),
+        Color3.fromRGB(0, 0, 0),
+        Color3.fromRGB(255, 255, 255),
+        3
+    )
+    return frame
 end
 			
 return uilib
