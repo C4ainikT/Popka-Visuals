@@ -85,8 +85,6 @@ function uilib.createSetting(offset, size, isOpened)
 		Color3.fromRGB(255, 255, 255),
 		3
 	)
-)
-
-end
+end)
 			
 return uilib
