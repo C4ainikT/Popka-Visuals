@@ -14,6 +14,9 @@ function uilib.createFrame(parent, name, pos, size, color, zIndex)
 end
 
 function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition, toggleColor, offColor, Function, Setting)
+
+	local tween = game:GetService("TweenService")
+
     local button = Instance.new("TextButton")
     button.Parent = parent
     button.Size = buttonSize
@@ -33,9 +36,9 @@ function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition
 
     local function updateButtonState()
         if isOn then
-            button.TextColor3 = toggleColor or Color3.fromRGB(122, 122, 122)
+            tween:Create(button, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {TextColor3 = offColor or Color3.fromRGB(255, 255, 255)}):Play()
         else
-            button.TextColor3 = offColor or Color3.fromRGB(255, 255, 255)
+            tween:Create(button, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {TextColor3 = offColor or Color3.fromRGB(255, 255, 0)}):Play()
         end
     end
 
