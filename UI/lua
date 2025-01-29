@@ -1,5 +1,6 @@
+local uilib = {}
 
-function createToggleButton(parent, buttonText, buttonSize, buttonPosition, onToggleFunction, LKM, toggleColor, offColor)
+function uilib.createToggleButton(parent, buttonText, buttonSize, buttonPosition, onToggleFunction, LKM, toggleColor, offColor)
     local button = Instance.new("TextButton")
     button.Parent = parent
     button.Size = buttonSize
@@ -40,3 +41,5 @@ function createToggleButton(parent, buttonText, buttonSize, buttonPosition, onTo
     
     return button
 end
+
+return uilib
